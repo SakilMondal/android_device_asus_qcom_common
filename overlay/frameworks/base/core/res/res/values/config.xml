@@ -492,4 +492,7 @@
     <!-- Component name for default assistant on this device -->
     <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
 
+    <!-- Configuration to support SIM contact batch operation.-->
+    <bool name="config_sim_phonebook_batch_operation">false</bool>
+
 </resources>
