@@ -298,6 +298,11 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensors.msm8916
 
+# Strip debug
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
+
 # Telephony-ext
 PRODUCT_PACKAGES += \
     telephony-ext
