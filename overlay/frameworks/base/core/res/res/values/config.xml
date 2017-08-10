@@ -514,4 +514,7 @@
          or lowmemorykiller.  Directly added to the default value chosen by
          ActivityManager based on screen size. -->
    <integer name="config_extraFreeKbytesAdjust">51200</integer>
+
+    <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 </resources>
