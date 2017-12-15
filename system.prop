@@ -77,6 +77,10 @@ persist.hwc.mdpcomp.enable=true
 # DRM
 drm.service.enabled=true
 
+# Fling velocities
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
+
 # Google DNS
 net.dns1=1.1.1.1
 net.dns2=1.0.0.1
