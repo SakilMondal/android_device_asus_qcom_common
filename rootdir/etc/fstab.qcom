@@ -18,5 +18,10 @@
 /devices/soc.0/7864900.sdhci/mmc_host*              auto         auto    defaults                                                                       voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*               auto         auto    defaults                                                                       voldmanaged=usb:auto
 
+#zram
+/dev/block/zram0                                    none         swap    defaults                                                                       zramsize=536870912,notrim
+
 # /dev/block/bootdevice/by-name/APD                 /vendor      ext4    ro,barrier=1                                                                   wait
 # For later development (314mb)
+
+
