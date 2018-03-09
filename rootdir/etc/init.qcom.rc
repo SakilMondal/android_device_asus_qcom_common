@@ -883,6 +883,9 @@ on property:sys.boot_completed=1
 
     start spk_calibration
 
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
+
 on property:vold.decrypt=trigger_restart_framework
     stop camera-provider-2-4
     start camera-provider-2-4
