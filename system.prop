@@ -105,6 +105,13 @@ media.stagefright.less-secure=true
 persist.data.netmgrd.qos.enable=true
 ro.use_data_netmgrd=true
 
+# Play store
+ro.com.google.clientidbase=android-asus
+ro.com.google.clientidbase.am=android-asus
+ro.com.google.clientidbase.gmm=android-asus
+ro.com.google.clientidbase.ms=android-asus
+ro.com.google.clientidbase.yt=android-asus
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
