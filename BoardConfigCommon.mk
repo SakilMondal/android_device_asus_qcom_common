@@ -110,6 +110,9 @@ TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_NEW_ION_API :=true
 
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
+
 # FM Radio
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
