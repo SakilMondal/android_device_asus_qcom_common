@@ -1,0 +1,11 @@
+on boot
+    # Notification LED
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/pwm_us
+
+service light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.msm8916
+    class hal
+    user system
+    group system
+    # shutting off lights while powering-off
+    shutdown critical

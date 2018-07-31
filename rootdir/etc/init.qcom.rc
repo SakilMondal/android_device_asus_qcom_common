@@ -299,9 +299,8 @@ on boot
     chmod 0664 /sys/class/power_supply/bms/voltage_ocv
 
     # Leds
-    chown system system /sys/class/leds/green/pwm_us
-    chown system system /sys/class/leds/red/pwm_us
-
+    chown system /sys/class/leds/led:switch/brightness
+    
     # Display
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chmod 0664 /sys/class/graphics/fb0/dyn_pu
