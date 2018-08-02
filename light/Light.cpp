@@ -46,70 +46,46 @@ static void handlemsm8916Backlight(const LightState& state) {
     uint32_t brightness = state.color & 0xFF;
     set(LCD_LED BRIGHTNESS, brightness);
 }
-
-static void handlemsm8916Notification(const LightState& state) {
-    uint32_t blink, Fakepwm, pwm, brightness_level;
-
-    /*
-     * default brightness & blinkMS to 0
-     */
-    blink = 0;
-
-    /*
-     * msm8916 specific brightness calculation
-     * for a not case (RGB extraction way)
-     */
-    brightness_level = (state.color & 0xff000000) ? (state.color & 0xff000000) >> 24 : 255;
-
-    /* Turn off msm8916's led initially */
-    set(GREEN BRIGHTNESS, blink);
-
-    /* Implementation of configuration */
-    if ((state.flashMode == Flash::HARDWARE) || (state.flashMode == Flash::TIMED)) {
-        uint32_t onMS  = state.flashOnMs;
-        uint32_t offMS = state.flashOffMs;
-
-        if (onMS > 0 && offMS > 0) {
-        uint32_t blinkMS = onMS + offMS;
-
-        /*
-        * pwm specifies the ratio of ON versus OFF
-        * pwm = 0 -> always off
-        * pwm = 255 -> always on
-        *
-        * Some Mathamatics below
-        *
-        */
-        Fakepwm = (onMS * 255) / blinkMS;
-
-        /* the low 4 bits are ignored, so round up if necessary */
-        if (Fakepwm > 0 && Fakepwm < 16)
-            Fakepwm = 16;
-
-        blink = 1;
-        pwm = offMS * 1000;
-        }
-        else {
-            blink = 0;
-            pwm   = 0;
-        }
-
-        /*
-         * Let's pulsate them :D
-         */
-        if (!blink) {
-            set(GREEN BRIGHTNESS, brightness_level);
-            set(GREEN PWM, 100);
-        }
-        else {
-            set(GREEN BRIGHTNESS, Fakepwm);
-            set(GREEN PWM, pwm);
-        }
-    }
-}
-
 static inline bool isLit(const LightState& state) {
     return state.color & 0x00ffffff;
+}
+
+static void handlemsm8916Notification(const LightState& state) {
+    uint32_t base_brightness = 0;
+
+    if(isLit(state))
+        base_brightness = (state.color & 0xff000000) ? (state.color & 0xff000000) >> 24 : 255;
+
+    /* Turn Led Off */
+    set(GREEN BRIGHTNESS, 0);
+
+    if ((state.flashMode == Flash::HARDWARE) || (state.flashMode == Flash::TIMED)) {
+    uint32_t onMS  = state.flashOnMs;
+    uint32_t offMS = state.flashOffMs;
+    uint32_t blinkMS = onMS + offMS;
+
+    /*
+    * Kang math from sony
+    */
+    uint32_t holder = (onMS * 255) / blinkMS;
+
+    /* the low 4 bits are ignored, so round up if necessary */
+    if (holder > 0 && holder < 16)
+        holder = 16;
+
+    uint32_t holderMain = offMS * 1000;
+
+    /* Pulsate the leds according to logic */
+    set(GREEN BRIGHTNESS, holder);
+    set(GREEN PWM, holderMain);
+    }
+    else {
+
+
+    set(GREEN BRIGHTNESS, base_brightness);
+    set(GREEN PWM, 100);
+    }
+
 }
 
 /* Keep sorted in the order of importance. */
