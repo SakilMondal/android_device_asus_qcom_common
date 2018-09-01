@@ -50,7 +50,7 @@ etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Headset_cal.acdb
 etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Speaker_cal.acdb
 
 # ADSP
-bin/adsprpcd
+bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
@@ -78,7 +78,7 @@ lib/libsphere3.so
 lib/style.cng
 
 # Audio
-bin/tfamode
+bin/tfamode:vendor/bin/tfamode
 etc/Tfa9887.cnt
 lib/libtfa9887.so
 lib64/libtfa9887.so
@@ -97,15 +97,14 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
 # Battery
-bin/vm_bms
+bin/vm_bms:vendor/bin/vm_bms
 
 # Bluetooth
-bin/btnvtool
-bin/hci_qcomm_init
+bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
 
 # Camera
-bin/mm-qcamera-daemon
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
@@ -240,7 +239,7 @@ vendor/lib/libxditk_Network.so
 # libwvm.so - from seed
 # libdrmwvmplugin.so - from seed
 # libwvdrmengine.so - from seed
-bin/qseecomd|2423ad273f52311dbd2f3bb7e810734744e2e6ff
+bin/qseecomd:vendor/bin/qseecomd|2423ad273f52311dbd2f3bb7e810734744e2e6ff
 lib/libdrmdecrypt.so|0cc6e6da79782fc4eeabc7c90d51dc5da7c12e7a
 vendor/lib64/libdrmfs.so|eb296e141d540b3ce53b79d1cf65365704914840
 vendor/lib64/libdrmtime.so|7473d9ce55ffca308eef83d7c3b1562c3b7adbee
@@ -373,7 +372,7 @@ vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-qdcm.so
 
 # Qualcomm framework - from kipper
-bin/irsc_util
+bin/irsc_util:vendor/bin/irsc_util
 etc/data/dsi_config.xml
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
@@ -411,11 +410,11 @@ vendor/lib/libsmemlog.so
 # Radio - from kipper
 -app/shutdownlistener/shutdownlistener.apk|39061bdec43a83c496f7ad4d8faed54317efb0ef
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|315a9441e0277b5e3c5de193df8149dde1a20cdb
-bin/netmgrd|e500d52c6629145af0daeaf884ce8c031d09b72f
-bin/qmuxd|bb7e0d13cf1229e40754b84539ca2c396300f5c8
-bin/radish|61ac905ce0b0056d0c954e6197cd930dd75ea2c4
-bin/rfs_access|d4d1fd1c62f1e38a3aeff75020f2b08006bf336b
-bin/rmt_storage|08011978c658b72068edc3b47c215440af06c196
+bin/netmgrd:vendor/bin/netmgrd
+bin/qmuxd:vendor/bin/qmuxd
+bin/radish:vendor/bin/radish
+bin/rfs_access:vendor/bin/rfs_access
+bin/rmt_storage:vendor/bin/rmt_storage
 etc/data/netmgr_config.xml|e28e1fe3cfbe89c89d66560160a10d53b11b8f61
 etc/data/qmi_config.xml|36966f438b68068eefbd4c314df5212f37d92af9
 etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
@@ -435,10 +434,10 @@ vendor/lib64/libsystem_health_mon.so|9ad529e01e048da5df35e7dca85b14078f75a4f3
 vendor/lib64/libxml.so|00c701f4003f037f5c6e96c4c97f172e18b96038
 
 # Radio - IMS
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
+bin/imscmservice:vendor/bin/imscmservice
+bin/imsdatadaemon:vendor/bin/imsdatadaemon
+bin/imsqmidaemon:vendor/bin/imsqmidaemon
+bin/ims_rtp_daemon:vendor/bin/ims_rtp_daemon
 etc/permissions/imscm.xml
 etc/permissions/qti_permissions.xml|a283406bc196ef3420b779543d01b83a73f63f98
 -framework/imscmlibrary.jar
@@ -486,7 +485,7 @@ vendor/lib64/libthermalioctl.so
 
 # Time services
 -app/TimeService/TimeService.apk
-bin/time_daemon
+bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 -vendor/lib/libtime_genoff.so
 vendor/lib64/libTimeService.so
