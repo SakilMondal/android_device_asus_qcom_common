@@ -16,6 +16,7 @@
 */
 -->
 <resources>
+    <bool name="config_buttonTextAllCaps">false</bool>
     <dimen name="config_dialogCornerRadius">8.0dip</dimen>
     <dimen name="config_buttonCornerRadius">4.0dip</dimen>
     <dimen name="config_progressBarCornerRadius">1000.0dip</dimen>
