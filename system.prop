@@ -73,10 +73,10 @@ mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
-persist.media.treble_omx=false
 
 # Netmgrd
 persist.data.netmgrd.qos.enable=true
+ro.use_data_netmgrd=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
