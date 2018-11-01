@@ -54,8 +54,6 @@ sys.vendor.shutdown.waittime=500
 # Camera
 persist.camera.cpp.duplication=false
 camera2.portability.force_api=1
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 # Display
 debug.egl.hw=0
