@@ -135,24 +135,22 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     Snap
 
-PRODUCT_PACKAGES += \
-    Snap
-
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl \
+	android.hardware.drm@1.0-service
 
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
+	android.hardware.memtrack@1.0-service \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     libgenlock \
@@ -169,8 +167,9 @@ PRODUCT_PACKAGES += \
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
-
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
+	
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8916 \
@@ -197,16 +196,13 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-service
 
 # Keystore
-#PRODUCT_PACKAGES += \
-#    keystore.msm8916
-
-# Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    keystore.msm8916
 
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
     lights.msm8916
 
 # Media
@@ -233,6 +229,7 @@ PRODUCT_PACKAGES += \
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
+	android.hardware.power@1.0-service \
     power.msm8916
 
 # QMI
@@ -261,8 +258,9 @@ PRODUCT_PACKAGES += \
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.renderscript@1.0-service
+	
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
@@ -307,7 +305,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    android.hardware.vibrator@1.0-impl \
+	    android.hardware.vibrator@1.0-service
 
 # Voice recognition
 PRODUCT_COPY_FILES += \
