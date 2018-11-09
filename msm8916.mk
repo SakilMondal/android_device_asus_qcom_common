@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
     bspcapability \
     camera.msm8916 \
     libshims_camera \
-    Snap
+    Camera2
 
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
@@ -249,12 +249,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_asus \
-    resize2fs_static
-
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
@@ -326,6 +320,7 @@ PRODUCT_PACKAGES += \
     wcnss_service
 
 PRODUCT_PACKAGES += \
+    libwifi-hal-qcom \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
