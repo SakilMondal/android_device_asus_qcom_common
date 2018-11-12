@@ -171,6 +171,9 @@ TARGET_BOOTANIMATION_HALF_RES := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
@@ -182,6 +185,11 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/lib-imscamera.so|libshims_camera.so \
     /system/vendor/lib64/libflp.so|libshims_flp.so \
     /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+
+# Vendor Unification Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8916
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
+PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
