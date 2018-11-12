@@ -1,0 +1,116 @@
+on fs
+
+on post-fs
+
+on post-fs-data
+
+#ASUS_BSP Jeff_Gu : add for Led blink time +++
+    chown system system /sys/class/leds/red/on_ms
+    chmod 0664 /sys/class/leds/red/on_ms
+    chown system system /sys/class/leds/green/on_ms
+    chmod 0664 /sys/class/leds/green/on_ms
+    chown system system /sys/class/leds/red/off_ms
+    chmod 0664 /sys/class/leds/red/off_ms
+    chown system system /sys/class/leds/green/off_ms
+    chmod 0664 /sys/class/leds/green/off_ms
+#ASUS_BSP Jeff_Gu : add for Led blink time ---
+
+#ASUS_BSP +++ Stimber_Hsueh "implement camera interface for ATD"
+	rm /data/data/camera_status
+    symlink /proc/driver/camera_status /data/data/camera_status
+    chmod 0777 /data/data/camera_status
+
+    rm /data/data/vga_status
+    symlink /proc/driver/vga_status /data/data/vga_status
+    chmod 0777 /data/data/vga_status
+
+    rm /data/data/GetRearCameraResolution
+    symlink /proc/driver/GetRearCameraResolution /data/data/GetRearCameraResolution
+    chmod 0777 /data/data/GetRearCameraResolution
+#ASUS_BSP --- Stimber_Hsueh "implement camera interface for ATD"
+
+#ASUS_BSP +++ PJ "implement CalibrationBackup interface for ATD&DIT"
+    rm /data/data/Camera_Unique_ID
+    symlink /system/bin/Camera_Unique_ID /data/data/Camera_Unique_ID
+    chmod 0777 /data/data/Camera_Unique_ID
+	chown system shell /data/data/Camera_Unique_ID
+    rm /data/data/BackupCalibrationData
+    symlink /system/bin/BackupCalibrationData /data/data/BackupCalibrationData
+    chmod 0777 /data/data/BackupCalibrationData
+	chown system shell /data/data/BackupCalibrationData
+    rm /data/data/RestoreCalibrationData
+    symlink /system/bin/RestoreCalibrationData /data/data/RestoreCalibrationData
+    chmod 0777 /data/data/RestoreCalibrationData
+	chown system shell /data/data/RestoreCalibrationData
+#ASUS_BSP --- PJ "implement CalibrationBackup interface for ATD&DIT"
+
+#ASUS_BSP +++ srhuang "Hall Sensor"
+	symlink /sys/bus/platform/devices/soc.0/hall_sensor/hall_sensor/status	/data/data/hallsensor_status
+	symlink /sys/bus/platform/devices/soc.0/hall_sensor/hall_sensor/debounce	/data/data/hallsensor_debounce
+	chmod 0600 /data/data/hallsensor_status
+	chmod 0600 /data/data/hallsensor_debounce
+#ASUS_BSP --- srhuang "Hall Sensor"
+
+#ASUS_BSP +++ Surya_Xu "CSC Laser"
+	chown media sdcard_rw /proc/driver/LaserFocus_on
+	chown media sdcard_rw /proc/driver/LaserFocus_value
+	chown system sdcard_rw /proc/driver/LaserFocus_Status
+	chown media sdcard_rw /proc/driver/LaserFocus_Status_For_Camera
+	chown system sdcard_rw /proc/driver/LaserFocus_CalStart
+	chown system sdcard_rw /proc/driver/LaserFocus_enforce
+	chown system sdcard_rw /proc/driver/LaserFocus_value_more_info
+	chown system sdcard_rw /proc/driver/LaserFocus_debug_dump
+	chown system sdcard_rw /proc/driver/LaserFocus_I2c_Status
+
+	rm /data/data/LaserFocus_on
+	rm /data/data/LaserFocus_value
+	rm /data/data/LaserFocus_value_more_info
+	rm /data/data/LaserFocus_Status
+	rm /data/data/LaserFocus_CalStart
+	rm /data/data/LaserFocus_disable
+	rm /data/data/LaserFocus_debug_dump
+	rm /data/data/LaserFocus_I2c_Status
+
+	symlink /system/bin/LaserFocus_on /data/data/LaserFocus_on
+	symlink /proc/driver/LaserFocus_value /data/data/LaserFocus_value
+	symlink /proc/driver/LaserFocus_value_more_info /data/data/LaserFocus_value_more_info
+	symlink /proc/driver/LaserFocus_Status /data/data/LaserFocus_Status
+	symlink /system/bin/LaserFocus_CalStart /data/data/LaserFocus_CalStart
+	symlink /system/bin/LaserFocus_enforce /data/data/LaserFocus_disable
+	symlink /proc/driver/LaserFocus_debug_dump /data/data/LaserFocus_debug_dump
+	symlink /proc/driver/LaserFocus_I2c_Status /data/data/LaserFocus_I2c_Status
+#ASUS_BSP --- Surya_Xu "CSC Laser"
+
+# ASUS_BSP +++ Peter_Lu "Akm09911 compass sensor & KX022 Gsensor"
+    #  Permissions for Sensors
+    # accelerometer kx022
+    chown system system /sys/bus/i2c/devices/0-001f/enable
+    chown system system /sys/bus/i2c/devices/0-001f/delay
+
+    chmod 0660 /sys/bus/i2c/devices/0-001f/enable
+    chmod 0660 /sys/bus/i2c/devices/0-001f/delay
+
+    # AKM E-compass
+    chown system system /sys/class/compass/akm09911/enable_acc
+    chown system system /sys/class/compass/akm09911/enable_mag
+    chown system system /sys/class/compass/akm09911/enable_fusion
+    chown system system /sys/class/compass/akm09911/delay_acc
+    chown system system /sys/class/compass/akm09911/delay_mag
+    chown system system /sys/class/compass/akm09911/delay_fusion
+    chown system system /sys/class/compass/akm09911/accel
+    chown system system /dev/akm09911_dev
+
+    chmod 0660 /sys/class/compass/akm09911/enable_mag
+    chmod 0660 /sys/class/compass/akm09911/delay_mag
+    chmod 0660 /sys/class/compass/akm09911/enable_acc
+    chmod 0660 /sys/class/compass/akm09911/delay_acc
+    chmod 0660 /sys/class/compass/akm09911/enable_fusion
+    chmod 0660 /sys/class/compass/akm09911/delay_fusion
+    chmod 0660 /dev/akm09911_dev
+
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_status
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_09911_raw
+    chmod 0774 /sys/devices/virtual/compass/akm09911/akm_i2c
+    chmod 0774 /sys/bus/i2c/devices/0-000f/Gsensor_raw
+    chmod 0774 /sys/bus/i2c/devices/0-000f/Gsensor_status
+
