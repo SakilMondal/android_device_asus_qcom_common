@@ -151,9 +151,6 @@ TARGET_BOOTANIMATION_HALF_RES := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
-
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
