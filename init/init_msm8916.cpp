@@ -147,8 +147,6 @@ void vendor_load_properties()
 	
     // Init a dummy BT MAC address, will be overwritten later
     property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
-    check_device();
-    init_alarm_boot_properties();
 
     sprintf(p_device, "ASUS_%s", device);
 
