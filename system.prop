@@ -115,14 +115,6 @@ ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=9,9
 
-# IMS
-service.qti.ims.enabled=1
-persist.radio.calls.on.ims=0
-persist.radio.jbims=0
-persist.radio.imsregrequired=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-
 # Shutdown timeout
 ro.build.shutdown_timeout=7
 
