@@ -103,8 +103,6 @@ dhcp.wlan0.dns2=1.0.0.1
 # Media
 mm.enable.sec.smoothstreaming=true
 mmp.enable.3g2=true
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 # Netmgrd
 persist.data.netmgrd.qos.enable=true
