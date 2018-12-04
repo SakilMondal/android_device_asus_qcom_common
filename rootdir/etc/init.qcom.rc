@@ -813,10 +813,10 @@ service perfd /vendor/bin/perfd
     group root
     disabled
 
-service thermal-engine /vendor/bin/thermal-engine
-    class main
-    user root
-    group root
+#service thermal-engine /vendor/bin/thermal-engine
+#    class main
+#    user root
+#    group root
 
 service time_daemon /system/bin/time_daemon
     class late_start
