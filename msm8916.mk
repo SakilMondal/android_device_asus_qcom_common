@@ -129,7 +129,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-	android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.4-service \
     camera.device@1.0-impl \
     bspcapability \
     camera.msm8916 \
@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-	android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-service
 
 # Display
 PRODUCT_PACKAGES += \
@@ -155,7 +155,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-	android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-service \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     libgenlock \
@@ -232,7 +232,7 @@ PRODUCT_PACKAGES += \
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-	android.hardware.power@1.0-service \
+    android.hardware.power@1.0-service \
     power.msm8916
 
 # QMI
@@ -244,7 +244,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.opengles.sh \
     init.qcom.power.sh \
-	init.qcom.bt.sh \
+    init.qcom.bt.sh \
     init.qcom.factory.sh
 
 PRODUCT_PACKAGES += \
@@ -289,11 +289,6 @@ PRODUCT_BOOT_JARS += \
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
-
-# Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/thermal/thermal-engine-8916.conf:system/etc/thermal-engine-8916.conf \
-    $(LOCAL_PATH)/thermal/thermal-engine-8939.conf:system/etc/thermal-engine-8939.conf
 
 # USB HAL
 PRODUCT_PACKAGES += \
