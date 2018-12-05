@@ -143,6 +143,7 @@ TARGET_USES_MKE2FS := true
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true
+TARGET_HAS_NO_WLAN_STATS := true
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
