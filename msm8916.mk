@@ -321,9 +321,8 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     libwcnss_qmi \
-    libwpa_client \
-    wificond
-
+    libwpa_client
+    
 PRODUCT_PACKAGES += \
     wcnss_service
 
