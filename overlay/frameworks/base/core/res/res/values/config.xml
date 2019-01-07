@@ -356,6 +356,9 @@
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
 
+    <!-- Whether to allow process with media UID to access CameraServiceProxy -->
+    <bool name="config_allowMediaUidForCameraServiceProxy">true</bool>
+
     <!-- AlwaysOnDisplay  -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
