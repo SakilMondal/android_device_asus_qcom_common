@@ -58,17 +58,14 @@ persist.camera.cpp.duplication=false
 camera2.portability.force_api=1
 
 # Display
-debug.hwui.renderer=opengl
-debug.hwui.use_buffer_age=false
-persist.hwc.mdpcomp.enable=true
+debug.egl.hw=0
+debug.enable.sglscale=1
 debug.mdpcomp.idletime=600
 debug.mdpcomp.logs=0
-persist.hwc.ptor.enable=true
-debug.egl.hw=0
 debug.sf.hw=0
-debug.enable.sglscale=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
+persist.hwc.mdpcomp.enable=true
 
 # DRM
 drm.service.enabled=true
