@@ -19,9 +19,8 @@
 /devices/platform/msm_hsusb_host/usb*               auto         auto    defaults                                                                       voldmanaged=usb:auto
 
 #zram
-/dev/block/zram0                                    none         swap    defaults                                                                       zramsize=536870912,notrim
+/dev/block/zram0                                    none         swap    defaults                                                                       zramsize=268435456,max_comp_streams=4
 
 # /dev/block/bootdevice/by-name/APD                 /vendor      ext4    ro,barrier=1                                                                   wait
 # For later development (314mb)
-
 
