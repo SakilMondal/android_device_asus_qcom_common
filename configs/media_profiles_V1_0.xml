@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<!-- Copyright 2016 The Android Open Source Project
-=======
 <!-- Copyright (C) 2012-2014, The Linux Foundation. All rights reserved
      Not a contribution.
 
      Copyright (C) 2010 The Android Open Source Project
 
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -134,28 +130,6 @@
              channels="2" />
     </EncoderProfile>-->
 
-<<<<<<< HEAD
-    <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-      <Video codec="h264"
-             bitRate="192000"
-             width="176"
-             height="144"
-             frameRate="30" />
-
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="192000"
-             width="176"
-             height="144"
-             frameRate="30" />
-
-=======
 <!--    <EncoderProfile quality="vga" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -176,7 +150,6 @@
              height="144"
              frameRate="30" />
 
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
       <!-- audio setting is ignored -->
       <Audio codec="amrnb"
              bitRate="12200"
@@ -241,8 +214,6 @@
              channels="1" />
     </EncoderProfile>
 
-<<<<<<< HEAD
-=======
 <!--    <EncoderProfile quality="timelapsewqvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="720000"
@@ -299,7 +270,6 @@
              channels="1" />
     </EncoderProfile>-->
 
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -441,28 +411,6 @@
              channels="2" />
     </EncoderProfile>-->
 
-<<<<<<< HEAD
-    <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-      <Video codec="h264"
-             bitRate="192000"
-             width="176"
-             height="144"
-             frameRate="30" />
-
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="192000"
-             width="176"
-             height="144"
-             frameRate="30" />
-
-=======
 <!--     <EncoderProfile quality="vga" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
@@ -496,7 +444,6 @@
              height="144"
              frameRate="30" />
 
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
       <!-- audio setting is ignored -->
       <Audio codec="amrnb"
              bitRate="12200"
@@ -561,39 +508,6 @@
 
 <!--    <EncoderProfile quality="timelapsewqvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
-<<<<<<< HEAD
-             bitRate="1200000"
-             width="352"
-             height="288"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="48000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="512000"
-             width="320"
-             height="240"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-
-    <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="5000000"
-             width="720"
-=======
              bitRate="720000"
              width="432"
              height="240"
@@ -610,39 +524,18 @@
       <Video codec="h264"
              bitRate="2000000"
              width="640"
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
              height="480"
              frameRate="30" />-->
 
       <!-- audio setting is ignored -->
-<<<<<<< HEAD
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="48000"
-             channels="1" />
-    </EncoderProfile>
-=======
 <!--      <Audio codec="amrnb"
              bitRate="12200"
              sampleRate="8000"
              channels="1" />
     </EncoderProfile>-->
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
 
 <!--    <EncoderProfile quality="timelapsewvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
-<<<<<<< HEAD
-             bitRate="8000000"
-             width="1280"
-             height="720"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="48000"
-             channels="1" />
-=======
              bitRate="2000000"
              width="800"
              height="480"
@@ -681,7 +574,6 @@
                    bitRate="96000"
                    sampleRate="48000"
                    channels="1" />
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="30">
@@ -764,13 +656,8 @@
         for TEST applications. For other applications, we do
         not perform any checks at all.
     -->
-<<<<<<< HEAD
-    <VideoDecoderCap name="wmv" enabled="true"/>
-    <AudioDecoderCap name="wma" enabled="true"/>
-=======
     <VideoDecoderCap name="wmv" enabled="false"/>
     <AudioDecoderCap name="wma" enabled="false"/>
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
 
     <!--
         The VideoEditor Capability configuration:
@@ -795,21 +682,7 @@
         These values are for video encoder.
     -->
     <!--
-<<<<<<< HEAD
-      Codec = h.264, Baseline profile, level 4.0
-    -->
-    <ExportVideoProfile name="h264" profile= "1" level="2048"/>
-    <!--
-      Codec = h.263, Baseline profile, level 70
-    -->
-    <ExportVideoProfile name="h263" profile= "1" level="128"/>
-    <!--
-      Codec = mpeg4, Simple profile, level 5
-    -->
-    <ExportVideoProfile name="m4v" profile= "1" level="128"/>
-=======
       Codec = h.264, Baseline profile, level 4
     -->
     <ExportVideoProfile name="h264" profile= "1" level="2048"/>
->>>>>>> c4e2079... lettuce: Kang media configs from A6000
 </MediaSettings>
