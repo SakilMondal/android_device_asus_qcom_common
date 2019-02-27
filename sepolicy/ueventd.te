@@ -1,0 +1,2 @@
+allow ueventd exfat:dir search;
+allow ueventd exfat:file { getattr open read };
