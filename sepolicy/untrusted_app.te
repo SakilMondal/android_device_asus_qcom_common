@@ -1,0 +1,6 @@
+allow untrusted_app alarm_boot_prop:file read;
+allow untrusted_app alarm_handled_prop:file read;
+allow untrusted_app alarm_instance_prop:file read;
+allow untrusted_app bg_boot_complete_prop:file read;
+allow untrusted_app bg_daemon_prop:file read;
+allow untrusted_app runtime_event_log_tags_file:file { open read };

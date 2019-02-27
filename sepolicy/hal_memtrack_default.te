@@ -1,1 +1,5 @@
-dontaudit hal_memtrack_default { domain -surfaceflinger }:file read;
+allow hal_memtrack_default hal_health_default:file read;
+allow hal_memtrack_default hwservicemanager:dir search;
+allow hal_memtrack_default hwservicemanager:file { getattr open read };
+allow hal_memtrack_default servicemanager:dir search;
+allow hal_memtrack_default servicemanager:file { getattr open read };
