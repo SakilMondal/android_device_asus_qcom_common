@@ -244,7 +244,8 @@ on boot
     # Leds
     chown system system /sys/class/leds/green/pwm_us
     chown system system /sys/class/leds/red/pwm_us
-
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
     # Display
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chmod 0664 /sys/class/graphics/fb0/dyn_pu
