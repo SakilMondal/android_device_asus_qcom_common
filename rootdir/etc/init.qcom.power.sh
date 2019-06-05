@@ -42,30 +42,22 @@ case "$soc_id" in
         echo 30 > /proc/sys/kernel/sched_mostly_idle_load
         echo 3 > /proc/sys/kernel/sched_mostly_idle_nr_run
 
-        # Disable thermal core_control to update scaling_min_freq
-        echo 0 > /sys/module/msm_thermal/core_control/enabled
-
         # Enable governor
         echo 1 > /sys/devices/system/cpu/cpu0/online
         echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-        echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+        echo 400000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
         # Enable thermal core_control now
-	echo "1152000 64 61" > /sys/kernel/msm_thermal/zone0
-	echo "1094400 68 65" > /sys/kernel/msm_thermal/zone1
-	echo "8000000 70 69" > /sys/kernel/msm_thermal/zone2
-	echo "533333 73 71" > /sys/kernel/msm_thermal/zone3
-	echo "400000 77 74" > /sys/kernel/msm_thermal/zone4
-        echo 1 > /sys/module/msm_thermal/core_control/enabled
-        echo 1000 > /sys/kernel/msm_thermal/sampling_ms
-        echo 1 > /sys/kernel/msm_thermal/enabled
+        echo 85 > /sys/module/msm_thermal/parameters/core_limit_temp_degC
+        echo 75 > /sys/module/msm_thermal/parameters/limit_temp_degC
+        echo Y > /sys/module/msm_thermal/parameters/enabled
 
         echo "25000 1094400:50000" > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
         echo 90 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
         echo 30000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
         echo 998400 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
         echo 0 > /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
-        echo "1 800000:85 998400:90 1094400:80" > /sys/devices/system/cpu/cpufreq/interactive/target_loads
+        echo "1 200000:10 400000:20 533000:33 800000:50 998400:70 1094400:75 1152000:80" > /sys/devices/system/cpu/cpufreq/interactive/target_loads
         echo 50000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
 
         # Bring up all cores online
@@ -92,8 +84,6 @@ case "$soc_id" in
         echo 40 >/sys/class/devfreq/gpubw/bw_hwmon/io_percent
         echo cpufreq > /sys/class/devfreq/mincpubw/governor
 
-        # Disable thermal core_control to update interactive gov settings
-        echo 0 > /sys/module/msm_thermal/core_control/enabled
 
         # Enable governor for perf cluster
         echo 1 > /sys/devices/system/cpu/cpu0/online
@@ -103,9 +93,9 @@ case "$soc_id" in
         echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
         echo 1113600 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
         echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
-        echo "1 960000:85 1113600:90 1344000:80" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+        echo "1 200000:10 400000:20 800000:50 960000:85 1113600:90 1344000:80" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
         echo 50000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
-        echo 960000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+        echo 400000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
         # Enable governor for power cluster
         echo 1 > /sys/devices/system/cpu/cpu4/online
@@ -115,12 +105,15 @@ case "$soc_id" in
         echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
         echo 998400 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
         echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
-        echo "1 800000:90" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+        echo "1 200000:10 400000:20 533000:33 800000:50 998400:70 1094400:75 1152000:80" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
         echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
-        echo 800000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+        echo 200000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
         # Enable thermal core_control now
-        echo 1 > /sys/module/msm_thermal/core_control/enabled
+        echo 85 > /sys/module/msm_thermal/parameters/core_limit_temp_degC
+        echo 75 > /sys/module/msm_thermal/parameters/limit_temp_degC
+        echo Y > /sys/module/msm_thermal/parameters/enabled
+
 
         # Bring up all cores online
         echo 1 > /sys/devices/system/cpu/cpu1/online
