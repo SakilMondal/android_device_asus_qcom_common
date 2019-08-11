@@ -785,11 +785,6 @@ service charger /charger
     group log
     seclabel u:r:healthd:s0
 
-service vm_bms /system/bin/vm_bms
-    class main
-    user root
-    group root wakelock
-
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
@@ -836,7 +831,6 @@ on charger
     chown root system /sys/class/power_supply/bms/voltage_ocv
     chmod 0664 /sys/class/power_supply/bms/current_now
     chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-    start vm_bms
 
 service ppd /vendor/bin/mm-pp-daemon
     class late_start
